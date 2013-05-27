@@ -13,14 +13,17 @@ namespace StoreClient.Entities
         {
             foreach (var link in links)
             {
-                var uri = new Uri("http://something.com" + Uri.UnescapeDataString(link.href));
+                //var uri = new Uri("http://something.com" + Uri.UnescapeDataString(link.href));
+                var uri = new Uri("http://marketplaceedgeservice.windowsphone.com" + Uri.UnescapeDataString(link.href));
                 var queries = ParseQueryString(uri.Query);
                 if (link.rel == "prev")
                 {
+                    if (queries.ContainsKey("beforeMarker"))
                     PreviousPageMarker = "beforeMarker=" + queries["beforeMarker"];
                 }
                 else if (link.rel == "next")
                 {
+                    if (queries.ContainsKey("afterMarker"))
                     PreviousPageMarker = "afterMarker=" + queries["afterMarker"];
                 }
             }
