@@ -260,7 +260,7 @@ namespace StoreClient
         {
             locale = string.IsNullOrEmpty(locale) ? Locale : locale;
 
-            if (costType == CostType.Free || costType == CostType.Paid)
+            if (costType == CostType.Free || costType == CostType.Paid || costType==CostType.FreeAndPaid)
             {
                 var url = CreateAppListUrl(searchBy, costType, includeGames, pageNumber, locale, categoryId);
 
