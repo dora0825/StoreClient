@@ -52,7 +52,8 @@ namespace StoreClient
         /// </summary>
         public StoreApiClient()
         {
-            HttpClient = new HttpClient(new CompressedHttpClientHandler());
+            //HttpClient = new HttpClient(new CompressedHttpClientHandler());
+            HttpClient = new HttpClient();
             Locale = DefaultLocale;
         }
 
